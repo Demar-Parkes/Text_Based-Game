@@ -1,0 +1,21 @@
+Game starts explaining the world of magic and ask’s the player questions that will assign specific stats and a element matching who they are
+
+if someone is protective or caring it will assign them high health but lower attack and life/earth element
+
+Agressive people get assigned fire with high attack power but lower life
+
+Relaxed people get water with balanced stats
+
+And element matters
+Fire beats life
+Water beats fire
+Life beats water
+
+You get a spell book containing prob 6 spells and when you use a spell it fades away. After two victories againsts monsters you can regain a spell of your choice. But gotta use them wisely
+
+
+Goal of game: learn all three elements becoming the strongest wizard
+
+Boss: all the boss battles are powerful wizards using a certain element
+
+After 3 fights player choose a direction. Left or right. This will decide what element the boss battle will be(can’t be the same as player). If player wins battle the player gets spell book for that boss element. Then continues after 3 battles the final boss will appear (wizards element is whichever element the player doesn’t have). If the player wins they will have acquired all magic elements ending the game telling them they won and something like they are the strongest wizard now or something. (Final boss needs powerful stats bc the player will already have the advantage element).

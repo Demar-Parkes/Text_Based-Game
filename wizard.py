@@ -1,11 +1,12 @@
 import json
 
 class Player:
-    def __init__(self, name, characteristics=None, health=None, element=None): # This function initializes the player
+    def __init__(self, name, characteristics=None, health=None, element=None, AttackLevel=None): # This function initializes the player
         self.name = name
         self.characteristics = characteristics
         self.health = health
         self.element = element
+        self.attackLevel = AttackLevel
 
 
     
@@ -14,12 +15,15 @@ class Player:
         if characteristics == 'aggressive':
             self.element = _elements[1]
             self.health = 50
+            self.attackLevel = 100
         elif characteristics == 'relaxed':
             self.element = _elements[0]
             self.health = 70
+            self.attackLevel = 70
         elif characteristics == 'protective':
             self.element = _elements[2]
             self.health = 100
+            self.attackLevel = 50
 
 
     def getter_setter(self): #This function can be used to set the elements and characteristics to a player
@@ -35,7 +39,8 @@ class Player:
         player_construct = {
             'Characteristics': f'{self.characteristics}',
             'Element': f'{self.element}',
-            'Health': f'{self.health}%'
+            'Health': f'{self.health}%',
+            'Attack Level': self.attackLevel
         }
 
         return json.dumps(player_construct, indent=2)
