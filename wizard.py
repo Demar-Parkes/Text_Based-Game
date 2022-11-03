@@ -24,8 +24,6 @@ class Player:
 
         return json.dumps(results, indent=2)
 
-    def menu
-
 
     def element_info(self): #This function gets the user info (eg: name and characteristics)
         content = {
