@@ -25,7 +25,7 @@ class Player:
         return json.dumps(results, indent=2)
 
 
-    def element_info(self): #This function gets the user info (eg: name and characteristics)
+    def element_info(self): #This function display elements info to user
         content = {
 
             'Aggressive': 'Get assigned fire with high attack power but lower life',
