@@ -89,3 +89,5 @@ class Player:
 
 game = Player()
 print(game.getter_setter())
+print("Your journey will now begin young one... the wind breeze is cold from your left, but warm air is coming from your right")
+direction_1 = str(input("Right or left?"))
