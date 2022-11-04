@@ -41,16 +41,16 @@ class Player:
         _elements = ['water', 'fire', 'earth', 'air']
         if characteristics == 'aggressive':
             self.element = _elements[1]
-            self.health = 50
+            self.health = 70
             self.attackLevel = 100
         elif characteristics == 'relaxed':
             self.element = _elements[0]
-            self.health = 70
-            self.attackLevel = 70
+            self.health = 80
+            self.attackLevel = 80
         elif characteristics == 'protective':
             self.element = _elements[2]
             self.health = 100
-            self.attackLevel = 50
+            self.attackLevel = 65
 
 
     def getter_setter(self): #This function can be used to set the elements, characteristics and name to a player
