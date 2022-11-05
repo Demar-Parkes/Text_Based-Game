@@ -1,7 +1,7 @@
 import json
 import os
 
-class Player:
+class Player: # This class is for the game logic, so we can keep the print functions out of it
     def __init__(self, name=None, characteristics=None, health=None, element=None, AttackLevel=None): # This function initializes the player
         self.name = name
         self.characteristics = characteristics
@@ -13,18 +13,26 @@ class Player:
         self.lose = 0
 
 
-    def Credits(self): #This function print our name and show that we created the program
-        return '***Made by***\n1.Demar\n2.Ejeah\n3.David'
+    def developerCredits(self) -> str: #This function print our name and show that we created the program
+        # return '***Made by***\n1.Demar\n2.Ejeah\n3.David'
+        # print(" %-*s  %s" % (13,'b', '*'*100))
 
-    
-    def clear_screen(self): #This function is to just simply clear the terminal screen, you can google it: os.system('cls')
+        print('*'*15, sep=' ')
+
+        print('*  Made By\n*\n*   Demar\n*   Ejeah\n*   David\n*')
+        
+        print('*\n'*0, end='')
+
+        print('*'*15)
+
+    def clear_screen(self) -> None: #This function is to just simply clear the terminal screen, you can google it: os.system('cls')
         if os.name == 'nt':
             os.system('cls')
 
         elif os.name == 'posix':
             os.system('clear')
 
-    def endGameStats(self): #we can use this function to show the player end results
+    def endGameStats(self) -> dict: #we can use this function to show the player end results
         print('###########END GAME STATS############')
         results = {
             'Name': self.name,
@@ -37,9 +45,31 @@ class Player:
 
         return json.dumps(results, indent=2)
     
+    def view_player(self) -> dict: #we can use this function to show the player attributes
+
+        player_construct = {
+            'Name': self.name,
+            'Characteristics': f'{self.characteristics}',
+            'Element': f'{self.element}',
+            'Health': f'{self.health}%',
+            'Attack Level': self.attackLevel
+            }
+        
+        return json.dumps(player_construct, indent=2)
+
+    def menu(self) -> None:
+        print('1.Start Game\n2.Player Info\n3.Credits')
+        _menu_choice = input('Enter menu choice: ')
+
+        if _menu_choice == '1':
+            self.intro()
+        elif _menu_choice == '2' and self.name != None:
+            return self.view_player()
+        elif _menu_choice == '3':
+            return self.Credits()
 
 
-    def element_info(self): #This function display elements info to user
+    def element_info(self): #This function gets the user info (eg: name and characteristics)
         content = {
 
             'Aggressive': 'Get assigned fire with high attack power but lower life',
@@ -86,7 +116,6 @@ class Player:
 
     def character_traits(self): #We can use this function to get the characteristics of the players
         type_of_characteristics = ['Aggressive', 'Relaxed', 'Protective']
-
         return type_of_characteristics
 
 
@@ -94,7 +123,22 @@ class Player:
         pass
 
 
-game = Player()
-print(game.getter_setter())
-print("Your journey will now begin young one... the wind breeze is cold from your left, but warm air is coming from your right")
-direction_1 = str(input("Right or left?"))
+class Game(Player): # Add scene info within this class
+    def __init__(self):
+        super().__init__()
+
+    def intro(self):
+        print("Your journey will now begin young one... the wind breeze is cold from your left, but warm air is coming from your right")
+        direction_1 = input('which direction would you like to turn [[R]ight, [L]eft]: ')
+
+
+    def scene2(self):
+        pass
+
+    def scene3(self):
+        pass
+
+
+
+game = Game()
+print(game.developerCredits())
