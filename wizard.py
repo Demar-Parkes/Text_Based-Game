@@ -1,3 +1,4 @@
+import sys
 import json
 import os
 
@@ -13,7 +14,7 @@ class Player: # This class is for the game logic, so we can keep the print funct
         self.lose = 0
 
 
-    def developerCredits(self) -> str: #This function print our name and show that we created the program
+    def developerCredits(self) -> None: #This function print our name and show that we created the program
         # return '***Made by***\n1.Demar\n2.Ejeah\n3.David'
         # print(" %-*s  %s" % (13,'b', '*'*100))
 
@@ -140,5 +141,11 @@ class Game(Player): # Add scene info within this class
 
 
 
-game = Game()
-print(game.developerCredits())
+if __name__ == '__main__':
+    try:
+        game = Game()
+        print(game.getter_setter())
+    except KeyboardInterrupt:
+        sys.exit()
+    except Exception as e:
+        print(e)
