@@ -37,31 +37,9 @@ class Player:
 
         return json.dumps(results, indent=2)
     
-    def view_player(self):
-
-        player_construct = {
-            'Name': self.name,
-            'Characteristics': f'{self.characteristics}',
-            'Element': f'{self.element}',
-            'Health': f'{self.health}%',
-            'Attack Level': self.attackLevel
-            }
-        
-        return json.dumps(player_construct, indent=2)
-
-    def menu(self):
-        print('1.Start Game\n2.Player Info\n3.Credits')
-        _menu_choice = input('Enter menu choice: ')
-
-        if _menu_choice == '1':
-            pass
-        elif _menu_choice == '2' and self.name != None:
-            return self.view_player()
-        elif _menu_choice == '3':
-            return self.Credits()
 
 
-    def element_info(self): #This function gets the user info (eg: name and characteristics)
+    def element_info(self): #This function display elements info to user
         content = {
 
             'Aggressive': 'Get assigned fire with high attack power but lower life',
