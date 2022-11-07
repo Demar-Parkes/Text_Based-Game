@@ -117,7 +117,7 @@ class Player: # This class is for the game logic, so we can keep the print funct
 
         if 'save_game.json' not in files:
             print('Before you can load a game, you must start a new game and create a user, after the game ends you can use the load game function\n')
-            print('[1].New Game\n[2].Player Info\n[3].Load Game\n[4].Credits\n[5].Exit')
+            print('[1].New Game\n[2].Player Info\n[3].Load Game\n[4].Credits\n[6].Exit')
 
         elif 'save_game.json' in files and self.name != None:
             print('[1].New Game\n[2].Player Info\n[3].Load Game\n[4].Credits\n[5].Edit User\n[6].Exit')
