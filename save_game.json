@@ -1,0 +1,16 @@
+{
+  "Player": [
+    {
+      "Name": "demar",
+      "Characteristics": "relaxed",
+      "Element": "water",
+      "Health": "80%",
+      "Attack Level": 80,
+      "spells": {
+        "water dragon": 10,
+        "water pellet": 12,
+        "water shield": "block"
+      }
+    }
+  ]
+}

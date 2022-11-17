@@ -49,8 +49,11 @@ class Player: # This class is for the game logic, so we can keep the print funct
 
                 for player in data['Player']:
                     if user_name is not None:
-                        player['Name'] = user_name
-                        self.name = user_name
+                        if user_name.isalpha():
+                            player['Name'] = user_name
+                            self.name = user_name
+                        else:
+                            print(f"\n[-]COULDN'T CHANGE NAME, YOU ENTERED {user_name}\n")
                     if element is not None:
                         player['Characteristics'] = element
                         self.characteristics = element
@@ -154,10 +157,17 @@ class Player: # This class is for the game logic, so we can keep the print funct
         elif _menu_choice == '5':
             if self.name != None:
                 new_name = input('\nEnter a new name, leave blank if you dont wanna change: ')
-                new_characteristics = input(f'\nEnter a new element, leave blank if you dont wanna change {self.character_traits()}: ')
+                # if new_name != '' and len(new_name) < 3:
+                #     print('\n[-]USERNAME SHOULD BE A MINIMUM OF 3 CHARACTERS\n')
+                #     return self.menu()
 
+                new_characteristics = input(f'\nEnter a new element, leave blank if you dont wanna change {self.character_traits()}: ')
                 if new_characteristics == '' and new_name == '':
-                    self.changeFeature(self.name, self.characteristics)
+                    return self.menu()
+                elif new_characteristics == '' and new_name != None:
+                    self.changeFeature(new_name, self.characteristics)
+                elif new_characteristics != None and new_name == '':
+                    self.changeFeature(self.name, self.set_elements(new_characteristics))
                 else:
                     self.changeFeature(new_name, self.set_elements(new_characteristics))
                 
@@ -222,7 +232,7 @@ class Player: # This class is for the game logic, so we can keep the print funct
 
     def getter_setter(self): #This function can be used to set the elements, characteristics and name to a player
         self.clear_screen()
-        get_name = input('Enter your username: ')
+        get_name = input('What is your name, Warrior: ')
         print(self.element_info())
         get_characteristic = input(f'Enter your character traits {self.character_traits()}: ')
         
@@ -272,6 +282,6 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         sys.exit()
     except json.JSONDecodeError:
-        print('[+]check your save data, made it is corrupt. Try making a new game')
+        print('[+]check your save data, maybe it is corrupt. Try making a new game')
     except Exception as e:
         print(e)
