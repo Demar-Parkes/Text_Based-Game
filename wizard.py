@@ -227,7 +227,7 @@ class Player: # This class is for the game logic, so we can keep the print funct
             self.spellBook = earth_spells
             return characteristics
         else:
-            print('\n[-]Unknown characteristics\n')
+            print('\n[-]UNKNOWN CHARACTERISTICS\n')
 
 
     def getter_setter(self): #This function can be used to set the elements, characteristics and name to a player
