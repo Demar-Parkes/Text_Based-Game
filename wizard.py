@@ -234,7 +234,7 @@ class Player: # This class is for the game logic, so we can keep the print funct
         self.clear_screen()
         get_name = input('What is your name, Warrior: ')
         print(self.element_info())
-        get_characteristic = input(f'Enter your character traits {self.character_traits()}: ')
+        get_characteristic = input(f'Enter your character trait {self.character_traits()}: ')
         
         if get_characteristic.lower() in [x.lower() for x in self.character_traits()]:
             self.characteristics = get_characteristic.lower()
